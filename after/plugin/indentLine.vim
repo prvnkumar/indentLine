@@ -52,8 +52,8 @@ function! s:InitColor()
         let gui_color = g:indentLine_color_gui
     endif
 
-    execute "highlight Conceal ctermfg=" . term_color . " ctermbg=NONE"
-    execute "highlight Conceal guifg=" . gui_color .  " guibg=NONE"
+    "execute "highlight Conceal ctermfg=" . term_color . " ctermbg=NONE"
+    "execute "highlight Conceal guifg=" . gui_color .  " guibg=NONE"
 
     if &term ==# "linux"
         if &background ==# "light"
@@ -61,7 +61,7 @@ function! s:InitColor()
         else
             let tty_color = exists("g:indentLine_color_tty_dark") ? g:indentLine_color_tty_dark : 2
         endif
-        execute "highlight Conceal cterm=bold ctermfg=" . tty_color .  " ctermbg=NONE"
+        "execute "highlight Conceal cterm=bold ctermfg=" . tty_color .  " ctermbg=NONE"
     endif
 endfunction
 
@@ -69,7 +69,7 @@ endfunction
 function! s:SetConcealOption()
     if ! exists("b:indentLine_ConcealOptionSet")
         let b:indentLine_ConcealOptionSet = 1
-        let &l:concealcursor = exists("g:indentLine_concealcursor") ? g:indentLine_concealcursor : "nc"
+        let &l:concealcursor = exists("g:indentLine_concealcursor") ? g:indentLine_concealcursor : "c"
         let &l:conceallevel = exists("g:indentLine_conceallevel") ? g:indentLine_conceallevel : "2"
     endif
 endfunction
